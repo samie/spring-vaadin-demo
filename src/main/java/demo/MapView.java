@@ -22,6 +22,13 @@ import java.util.stream.Collectors;
 @UIScope
 @SpringView(name="map")
 public class MapView extends CustomComponent implements View {
+
+    @Autowired
+    GPSRepository repo;
+
+    private LMap map = new LMap();
+    private LPolyline track = new LPolyline();
+
     public MapView() {
         map.addLayer(new LOpenStreetMapLayer());
         map.addLayer(track);
@@ -29,12 +36,6 @@ public class MapView extends CustomComponent implements View {
         map.setSizeFull();
         setCompositionRoot(map);
     }
-
-    @Autowired
-    GPSRepository repo;
-
-    private LMap map = new LMap();
-    private LPolyline track = new LPolyline();
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {

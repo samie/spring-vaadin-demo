@@ -51,6 +51,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- To enable automatic push in Vaadin this is needed -->
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-push</artifactId>
+        </dependency>
+
         <!--
         Leaflet integration component for Vaadin. More
         info at https://vaadin.com/directory#!addon/v-leaflet
@@ -58,7 +64,7 @@
         <dependency>
             <groupId>org.vaadin.addon</groupId>
             <artifactId>v-leaflet</artifactId>
-            <version>0.6.3</version>
+            <version>0.6.4</version>
             <exclusions>
                 <exclusion>
                     <groupId>javax.validation</groupId>
