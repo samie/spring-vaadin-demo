@@ -7,6 +7,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
+import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.spring.navigator.SpringViewProvider;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.UI;
@@ -50,6 +51,7 @@ public class DemoApplication {
     }
 
     @Component
+    @UIScope
     @RepositoryEventHandler(GPSUpdate.class)
     public static class GPSUpdateEventHandler implements ViewChangeListener {
 
